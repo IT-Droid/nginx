@@ -61,3 +61,5 @@ haproxy telepítése
   apt-get install haproxy=1.8.\*
   haproxy -v
   haproxy -f /etc/haproxy/haproxy.cfg -c
+
+http://cbonte.github.io/haproxy-dconv/1.8/configuration.html#7.3.6
