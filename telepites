@@ -17,13 +17,22 @@ general setup
   apt autoremove
   apt autoclean
   dpkg-reconfigure dash
+  
+php7.2 telepítése
+  sudo apt install php7.2-cli php7.2-fpm php7.2-mysql php7.2-json php7.2-opcache php7.2-mbstring php7.2-xml php7.2-gd php7.2-curl
+
+nginx telepítése
+  wget http://nginx.org/keys/nginx_signing.key
+  sudo apt-key add nginx_signing.key
+  sudo add-apt-repository 'deb http://nginx.org/packages/ubuntu/ bionic nginx'
+  sudo add-apt-repository 'deb-src http://nginx.org/packages/ubuntu/ bionic nginx'  
+  apt update
   apt install nginx
   sudo mkdir -p /var/www/site-a
   nano /var/www/site-a/index.php
     OK
   sudo nginx -t
-  haproxy -f /etc/haproxy/haproxy.cfg -c
-  
+   
 mariadb 10.3 telepítése
   sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
   sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://ftp.utexas.edu/mariadb/repo/10.3/ubuntu bionic main'
@@ -35,9 +44,6 @@ mariadb 10.3 telepítése
     mysql> FLUSH PRIVILEGES;
     mysql> EXIT;
   
-php7.2 telepítése
-  sudo apt install php7.2-cli php7.2-fpm php7.2-mysql php7.2-json php7.2-opcache php7.2-mbstring php7.2-xml php7.2-gd php7.2-curl
-
 wordpress letöltése és telepítése
   cd /tmp
   wget https://hu.wordpress.org/latest-hu_HU.tar.gz
@@ -47,3 +53,11 @@ wordpress letöltése és telepítése
   find /var/www/site-a/ -type d -exec chmod 755 {} \;
   find /var/www/site-a/ -type f -exec chmod 644 {} \;
   curl -s https://api.wordpress.org/secret-key/1.1/salt/
+
+haproxy telepítése
+  apt-get install software-properties-common
+  add-apt-repository ppa:vbernat/haproxy-1.8
+  apt-get update
+  apt-get install haproxy=1.8.\*
+  haproxy -v
+  haproxy -f /etc/haproxy/haproxy.cfg -c
