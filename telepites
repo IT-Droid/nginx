@@ -48,7 +48,7 @@ mariadb 10.3 telepítése
 wordpress letöltése és telepítése
   cd /tmp
   wget https://hu.wordpress.org/latest-hu_HU.tar.gz
-  tar xz latest-hu_HU.tar.gz
+  tar xvfz latest-hu_HU.tar.gz
   sudo mv /tmp/wordpress/* /var/www/site-a
   sudo chown -R www-data: /var/www/site-a
   find /var/www/site-a/ -type d -exec chmod 755 {} \;
