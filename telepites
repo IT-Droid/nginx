@@ -50,7 +50,7 @@ wordpress letöltése és telepítése
   wget https://hu.wordpress.org/latest-hu_HU.tar.gz
   tar xvfz latest-hu_HU.tar.gz
   sudo mv /tmp/wordpress/* /var/www/site-a
-  sudo chown -R www-data: /var/www/site-a
+  sudo chown -R www-data.www-data /var/www/site-a
   find /var/www/site-a/ -type d -exec chmod 755 {} \;
   find /var/www/site-a/ -type f -exec chmod 644 {} \;
   curl -s https://api.wordpress.org/secret-key/1.1/salt/
