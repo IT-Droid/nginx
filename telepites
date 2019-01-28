@@ -38,6 +38,7 @@ mariadb 10.3 telepítése
   sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://ftp.utexas.edu/mariadb/repo/10.3/ubuntu bionic main'
   sudo apt update
   sudo apt install mariadb-server mariadb-client
+  mysql_secure_installation
   mysql -u root -p
     mysql> CREATE DATABASE wordpress CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
     mysql> GRANT ALL ON wordpress.* TO 'adalon'@'localhost' IDENTIFIED BY '4d4l0n';
