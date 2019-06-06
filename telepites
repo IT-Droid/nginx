@@ -66,6 +66,13 @@ Percona Server for MySQL 8.0 telepítése
   sudo dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb
   sudo percona-release setup ps80
   sudo apt-get install percona-server-server percona-server-client
+  mysql_secure_installation
+  mysql -u root -p
+    mysql> CREATE DATABASE wordpress CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+    mysql> CREATE USER 'adalon'@'localhost' IDENTIFIED BY '4d4l0n';
+    mysql> GRANT ALL ON wordpress.* TO 'adalon'@'localhost';
+    mysql> FLUSH PRIVILEGES;
+    mysql> EXIT;
   
 wordpress letöltése és telepítése
   cd /tmp
