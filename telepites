@@ -73,6 +73,11 @@ Percona Server for MySQL 8.0 telepítése
     mysql> GRANT ALL ON wordpress.* TO 'adalon'@'localhost';
     mysql> FLUSH PRIVILEGES;
     mysql> EXIT;
+    
+redis 5.x telepítése
+  sudo add-apt-repository ppa:chris-lea/redis-server
+  sudo apt-get update
+  sudo apt -y install redis-server
   
 wordpress letöltése és telepítése
   cd /tmp
