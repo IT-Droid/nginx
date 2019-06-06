@@ -60,6 +60,12 @@ mariadb 10.3 telepítése
     mysql> GRANT ALL ON wordpress.* TO 'adalon'@'localhost' IDENTIFIED BY '4d4l0n';
     mysql> FLUSH PRIVILEGES;
     mysql> EXIT;
+    
+Percona Server for MySQL 8.0 telepítése
+  wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb
+  sudo dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb
+  sudo percona-release setup ps80
+  sudo apt-get install percona-server-server percona-server-client
   
 wordpress letöltése és telepítése
   cd /tmp
